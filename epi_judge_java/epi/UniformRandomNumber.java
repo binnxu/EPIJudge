@@ -15,7 +15,37 @@ public class UniformRandomNumber {
 
   public static int uniformRandom(int lowerBound, int upperBound) {
     // TODO - you fill in here.
-    return 0;
+    // brute force. use 0/1 bit to generate the range 0~2^n-1, => [lowerBound, 2^n-1+lowerBound]
+    // covering the [lowerBound, upperBound]
+    // if the generated number is out of bound, re-generate it.
+//
+//    int bitUpperBound = upperBound-lowerBound+1;
+//    int ret = 0;
+//    do{
+//        ret = 0;
+//        //for(int i=0; i<Math.floor(Math.log(bitUpperBound))+1;i++){
+//        for(int i=0; (1<<i)<bitUpperBound; i++){
+//        ret = (ret<<1) | zeroOneRandom();
+//        }
+//    }while(ret>=bitUpperBound);
+//
+//    ret = ret + lowerBound;
+//
+//    return ret;
+
+    //11052019 not correct
+//  int ret = 0;
+//  int x = upperBound - lowerBound +1;
+//  int numBits = (int)Math.log(x) +1;
+//  int i = 0;
+//  do {
+//    for (i = 0; i < numBits; i++) {
+//      ret = zeroOneRandom() + ret << 1;
+//    }
+//  } while(ret>x);
+//  System.out.println("lower bound " + lowerBound + " higher bound " + upperBound + " ret " + ret + " x " + x);
+//  return ret+lowerBound;
+    return -1;
   }
   private static boolean uniformRandomRunner(TimedExecutor executor,
                                              int lowerBound, int upperBound)
